@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  width: 500px;
+  margin: 20px auto;
+  position: relative;
+}
+.form {
+  background-color: #eee;
+  border-radius: 6px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  flex: 1;
+  font-size: 20px;
+}
+.input:focus {
+  outline: none;
+}
+.add {
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  background: #5a5757;
+  color: #eee;
+}
+.tasks {
+  background-color: #eee;
+  margin-top: 20px;
+  border-radius: 6px;
+  padding: 20px;
+  padding-left: 55px;
+}
+.tasks .task {
+  background-color: white;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  font-size: 25px;
+}
+.tasks .task:not(:last-child) {
+  margin-bottom: 15px;
+}
+.tasks .task:hover {
+  background-color: #f7f7f7;
+}
+.tasks .task.done {
+  opacity: 0.5;
+  position: relative;
+}
+.tasks .task.done span:nth-of-type(1) {
+  text-decoration: line-through;
+  text-decoration-color: green;
+}
+
+.tasks .task.done::before {
+  content: "";
+  position: absolute;
+  background-color: green;
+  width: 5px;
+  height: 11px;
+  border-radius: 30px;
+  left: -44px;
+  top: 23px;
+  transform: rotate(-9deg);
+}
+.tasks .task.done::after {
+  content: "";
+  position: absolute;
+  background-color: green;
+  width: 30px;
+  height: 5px;
+  border-radius: 30px;
+  left: -45px;
+  top: 22px;
+  transform: rotate(-35deg);
+}
+.tasks .task .del {
+  font-weight: bold;
+  font-size: 14px;
+  background: #5a5757;
+  color: #eee;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.container .del-All {
+  width: fit-content;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  background: #5a5757;
+  color: #eee;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10px;
+  display: none;
+  cursor: pointer;
+}
